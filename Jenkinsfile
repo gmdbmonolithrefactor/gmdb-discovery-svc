@@ -9,5 +9,5 @@ node {
     archiveArtifacts 'build/libs/*.jar'
 
     stage('building docker image')
-    sh 'docker build -t gmdb/gateway:${currentBuild.number} .'
+    sh label: '', script: 'docker build -t gmdb/gateway:${env.BUILD_NUMBER} .'
 }
