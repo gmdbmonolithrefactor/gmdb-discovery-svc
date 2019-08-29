@@ -8,6 +8,6 @@ node {
     stage('archiving jar file')
     archiveArtifacts 'build/libs/*.jar'
 
-    stage('building docker image')
+    stage('building docker image ${env.BUILD_NUMBER}')
     sh label: '', script: 'docker build -t gmdb/gateway:${env.BUILD_NUMBER} .'
 }
